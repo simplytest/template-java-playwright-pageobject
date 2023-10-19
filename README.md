@@ -1,6 +1,6 @@
 # Playwright Java POM template
 
-This is a template project for setting up a Playwright framework with Java and Maven, following the Page Object Model (POM) design pattern. It provides a starting point for automated UI testing using Playwright.
+This is a template project for setting up a Playwright framework with Java, Maven and TestNG following the Page Object Model (POM) design pattern. It provides a starting point for automated UI testing using Playwright.
 
 ## Getting Started
 
@@ -27,6 +27,7 @@ These instructions will help you set up and run the project on your local machin
     ```bash
     mvn clean install
     ```
+4. Set the base URL in src/test/resources/config/config.properties 
 
 ### Running Tests
 
