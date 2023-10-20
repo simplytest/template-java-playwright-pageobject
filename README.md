@@ -4,23 +4,15 @@ This is a template project for setting up a Playwright framework with Java, Mave
 
 ## Getting Started
 
-These instructions will help you set up and run the project on your local machine.
-
-### Prerequisites
-
-- Java JDK (>= 11)
-
-### Installing
-
-1. Clone the repository to your local machine:
+1. Create a new repository using this template or clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/simplytest/java-playwright-testng-allure.git
+   git clone https://github.com/simplytest/template-java-playwright-pageobject.git
    ```
 2. Navigate to the project directory
 
    ```bash
-   cd java-playwright-testng-allure
+   cd template-java-playwright-pageobject
    ```
 3. Install dependencies
 
