@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Properties;
 
 public class BrowserFactory {
@@ -35,11 +36,15 @@ public class BrowserFactory {
         BrowserContext browserContext = browser.newContext();
 
         return browserContext.newPage();
-    }    private Properties properties = initializeConfigProperties();
+    }
+
+    private Properties properties = initializeConfigProperties();
 
     public Properties initializeConfigProperties() {
         try {
-            FileInputStream fileInputStream = new FileInputStream("./src/test/resources/config/config.properties");
+            ClassLoader classLoader = getClass().getClassLoader();
+            String configUrl = classLoader.getResource("config/config.properties").getPath();
+            FileInputStream fileInputStream = new FileInputStream(configUrl);
             properties = new Properties();
             properties.load(fileInputStream);
         } catch (IOException e) {
