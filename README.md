@@ -15,12 +15,12 @@ These instructions will help you set up and run the project on your local machin
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/maximilianschlipf/playwright-pom.git
+   git clone https://github.com/simplytest/java-playwright-testng-allure.git
    ```
 2. Navigate to the project directory
 
    ```bash
-   cd playwright-pom
+   cd java-playwright-testng-allure
    ```
 3. Install dependencies
 
