@@ -4,6 +4,8 @@ This is a template project for setting up a Playwright framework with Java, Mave
 
 ## Getting Started
 
+### Installation
+
 1. Create a new repository using this template or clone the repository to your local machine:
 
    ```bash
