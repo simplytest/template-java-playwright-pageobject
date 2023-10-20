@@ -1,14 +1,20 @@
 package de.simplytest.base;
 
-import com.microsoft.playwright.APIRequest;
-import com.microsoft.playwright.APIRequestContext;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
 import de.simplytest.factory.BrowserFactory;
 import de.simplytest.pages.HomePage;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -34,14 +40,25 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result) {
+    public void tearDown(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE) {
             LocalDateTime currentDateTime = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
             String formattedDateTime = formatter.format(currentDateTime);
-            page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("./target/screenshots/" + result.getName() + "_" + browserName + "_" + formattedDateTime + ".png")));
+
+            String resultName = result.getName() + "_" + browserName + "_" + formattedDateTime;
+            Path screenshotPath = Paths.get("./target/screenshots/" + resultName + ".png");
+
+            page.screenshot(new Page.ScreenshotOptions().setPath(screenshotPath));
+            attachScreenshotToAllureReport(resultName, screenshotPath);
+
         }
 
         page.context().browser().close();
+    }
+
+    @Attachment(type = "image/png")
+    private void attachScreenshotToAllureReport(String resultName, Path screenshotPath) throws IOException {
+        Allure.addAttachment(resultName, new ByteArrayInputStream(Files.readAllBytes(screenshotPath)));
     }
 }
