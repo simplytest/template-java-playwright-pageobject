@@ -40,7 +40,7 @@ mvn test
 This project is set up to generate Allure reports for better visualization of test results. After running the tests, you can generate the Allure report using the following command:
 
 ```bash
-allure serve target/allure-results
+allure serve allure-results
 ```
 
 ### Contributing
