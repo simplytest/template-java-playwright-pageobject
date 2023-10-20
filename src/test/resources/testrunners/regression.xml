@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression Suite Chrome" verbose="1" >
+<suite name="Regression Suite Chrome" verbose="1">
     <parameter name="headless" value="true"></parameter>
     <parameter name="browserName" value="chrome"></parameter>
     <test name="Homepage Tests">
