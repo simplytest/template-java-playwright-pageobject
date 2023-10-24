@@ -5,7 +5,7 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="Homepage Tests">
         <classes>
-            <class name="de.simplytest.tests.TestCase"/>
+            <class name="org.example.tests.TestCase"/>
         </classes>
     </test>
 </suite>

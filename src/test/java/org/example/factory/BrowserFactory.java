@@ -1,4 +1,4 @@
-package de.simplytest.factory;
+package org.example.factory;
 
 import com.microsoft.playwright.*;
 

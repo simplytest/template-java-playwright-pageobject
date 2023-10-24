@@ -1,4 +1,4 @@
-package de.simplytest.pages;
+package org.example.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

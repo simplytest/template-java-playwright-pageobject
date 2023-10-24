@@ -1,8 +1,8 @@
-package de.simplytest.base;
+package org.example.base;
 
 import com.microsoft.playwright.Page;
-import de.simplytest.factory.BrowserFactory;
-import de.simplytest.pages.HomePage;
+import org.example.factory.BrowserFactory;
+import org.example.pages.HomePage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.testng.ITestResult;
