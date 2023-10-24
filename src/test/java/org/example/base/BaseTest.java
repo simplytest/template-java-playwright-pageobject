@@ -1,10 +1,10 @@
 package org.example.base;
 
 import com.microsoft.playwright.Page;
-import org.example.factory.BrowserFactory;
-import org.example.pages.HomePage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import org.example.factory.BrowserFactory;
+import org.example.pages.HomePage;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
