@@ -11,7 +11,7 @@ public class BrowserFactory {
     private Browser browser;
     private Properties properties;
 
-    public Page initializeBrowser(String browserName, String headless) throws InterruptedException {
+    public Page initializeBrowser(String browserName, String headless) throws InvalidBrowserNameException {
         boolean isHeadless = Boolean.parseBoolean(headless);
 
         playwright = Playwright.create();
@@ -30,7 +30,7 @@ public class BrowserFactory {
                 browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
                 break;
             default:
-                throw new InterruptedException("Please pass a valid browser name (chrome, firefox, webkit or chromium).");
+                throw new InvalidBrowserNameException("Please pass a valid browser name (chrome, firefox, webkit or chromium).");
         }
 
         BrowserContext browserContext = browser.newContext();
