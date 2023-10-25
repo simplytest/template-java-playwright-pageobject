@@ -9,6 +9,7 @@ import java.util.Properties;
 public class BrowserFactory {
     private Playwright playwright;
     private Browser browser;
+    private Properties properties;
 
     public Page initializeBrowser(String browserName, String headless) throws InterruptedException {
         boolean isHeadless = Boolean.parseBoolean(headless);
@@ -49,9 +50,5 @@ public class BrowserFactory {
         }
 
         return properties;
-    }    private Properties properties = initializeConfigProperties();
-
-
-
-
+    }
 }
