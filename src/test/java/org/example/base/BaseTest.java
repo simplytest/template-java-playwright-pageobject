@@ -4,7 +4,6 @@ import com.microsoft.playwright.Page;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.example.factory.BrowserFactory;
-import org.example.factory.InvalidBrowserNameException;
 import org.example.pages.HomePage;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -30,7 +29,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters({"browserName", "headless"})
-    public void setUp(@Optional("chrome") String browserName, @Optional("false") String headless) throws InvalidBrowserNameException {
+    public void setUp(@Optional("chrome") String browserName, @Optional("false") String headless) throws IllegalArgumentException {
         this.browserName = browserName;
 
         page = browserFactory.initializeBrowser(browserName, headless);
