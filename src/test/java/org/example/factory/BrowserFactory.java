@@ -30,7 +30,7 @@ public class BrowserFactory {
                 browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
                 break;
             default:
-                throw new IllegalArgumentException("Please pass a valid browser name (chrome, firefox, webkit or chromium).");
+                throw new IllegalArgumentException("Please provide a valid browser name (chrome, firefox, webkit or chromium).");
         }
 
         BrowserContext browserContext = browser.newContext();
